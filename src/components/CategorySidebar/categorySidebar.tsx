@@ -3,9 +3,9 @@ import { Category } from "@/types/categoryList";
 
 type Props = {
     categories: Category[];
-    selected: Set<string>;                 //tex new Set(["Chicken","Seafood"])
-    onToggle: (category: string) => void;  //toggla ett val av kategori
-    onClear?: () => void;                  //rensa alla
+    selected: Set<string>;                
+    onToggle: (category: string) => void;   
+    onClear?: () => void;                  
 };
 
 export function CategorySidebar({ categories, selected, onToggle, onClear }: Props) {
