@@ -40,3 +40,24 @@ Page with favourited recipes.
 -------------------------------------
 
 Done for now, will most likely be edited.
+
+
+How to login?
+Since the accounts are hardcoded and not saved in a DB we simply just use the existing 4.
+
+
+Acc 1:
+Username: Alexander Hallgren
+Password: 1234
+
+Acc 2:
+Username: Robert Chamberlain
+Password: 1234
+
+Acc 3:
+Username: Miriam Bryant
+Password: 1234
+
+Acc 4:
+Username: David Beckham
+Password: 1234

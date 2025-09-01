@@ -3,8 +3,8 @@ import { RecipeCard } from "../RecipeCard/recipeCard";
 type Meal = {
     idMeal: string;
     strMeal: string;
-    strCategory: string;
-    strArea: string;
+    strCategory?: string;
+    strArea?: string;
     strMealThumb: string;
 };
 
