@@ -71,6 +71,7 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full px-4 sm:px-10 py-8">
       <div className="mx-auto w-full max-w-7xl">
+      <h1 className="mb-4 md:mb-8 !text-4xl md:!text-7xl">Discover delicious recipes</h1>
         <div className="w-full bg-[#FFF9D6] min-h-[200px] mb-6 p-6 md:p-8 rounded-2xl border border-black/5 shadow-sm">
           <div className="flex justify-between">
             <h3 className="font-semibold">Hello {user?.username}</h3>
