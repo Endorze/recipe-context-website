@@ -4,6 +4,7 @@ import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import styles from "./Sidebar.module.css"
 import Link from "next/link";
 import { useLoginState } from "../../hooks/useLoginState";
+import { useLogout } from "../../lib/auth";
 
 const MAX_DRAG_FACTOR = 500
 const MIN_DRAG_FACTOR = 120
@@ -13,6 +14,7 @@ export const Sidebar = () => {
     const containerRef = useRef<HTMLDivElement>(null)
     const blobRef = useRef<HTMLDivElement>(null)
     const {user, setUser} = useLoginState();
+    const logout = useLogout();
 
     function logoutUser(e: React.FormEvent) {
         if (user) {
@@ -53,7 +55,7 @@ export const Sidebar = () => {
                     <Link href={"/profile"} key={"profile"}>My Profile</Link>
                     <Link href={"/recipes"} key={"recipes"}>All Recipes</Link>
                     <a target="_blank" href="/alexander_hallgren_cv.pdf">Resume/CV</a>
-                    <button onClick={logoutUser}>Logout</button>
+                    <button onClick={logout}>Logout</button>
                     <div className="flex gap-4">
                         <a href="https://www.linkedin.com/in/alexander-hallgren-5a4a501aa/" target="_blank" rel="noopener noreferrer">
                             <FaLinkedin className="text-gray-600 hover:opacity-80" size={30} />
