@@ -23,7 +23,7 @@ export default function Home() {
   //hämtar alla kategorier
   useEffect(() => {
     async function fetchCategories() {
-      const res = await fetch(`${fetchById}`);
+      const res = await fetch("https://www.themealdb.com/api/json/v1/1/list.php?c=list");
       const data = await res.json();
       setCategories(data.meals ?? []);
       setLoading(false);
