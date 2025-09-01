@@ -61,3 +61,7 @@ Password: 1234
 Acc 4:
 Username: David Beckham
 Password: 1234
+
+PS.
+In the all recipes page the areatag and recipe name is unknown, this is intentional (and i'm to lazy to bother fixing it, i dont like how their API'S are written.)
+So if you want them removed then let me know, but for now its gonna be unknown snacks. (atleast i display it correctly when added to favorites.)

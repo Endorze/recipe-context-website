@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Category } from "@/types/categoryList";
 import { CategorySidebar } from "@/components/CategorySidebar/categorySidebar";
 import { RecipeSection } from "@/components/RecipeGridLayout/recipeSection";
+import { fetchById } from "../../../../utils/ApiKeys";
 
 type Meal = {
   idMeal: string;
@@ -22,7 +23,7 @@ export default function Home() {
   //hämtar alla kategorier
   useEffect(() => {
     async function fetchCategories() {
-      const res = await fetch("https://www.themealdb.com/api/json/v1/1/list.php?c=list");
+      const res = await fetch(`${fetchById}`);
       const data = await res.json();
       setCategories(data.meals ?? []);
       setLoading(false);
@@ -61,7 +62,7 @@ export default function Home() {
     return selected.size === 0 ? all : all.filter(c => selected.has(c));
   }, [categories, selected]);
 
-  if (loading) return <div className="p-8">Laddar…</div>;
+  if (loading) return <div className="p-8">Loading...</div>;
 
 return (
   <div className="min-h-screen p-6 sm:p-10">
@@ -80,7 +81,7 @@ return (
         {visibleCategories.map(cat => {
           const meals = mealsByCat[cat] ?? [];
           if (meals.length === 0) return null;
-          return <RecipeSection key={cat} title={cat} meals={meals} />;
+          return <RecipeSection title={cat} meals={meals} />;
         })}
       </main>
     </div>
